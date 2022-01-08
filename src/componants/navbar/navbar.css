@@ -1,0 +1,9 @@
+.title {
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Pacifico", cursive;
+  margin-left: 5px;
+}
+.nav-container {
+  height: 55px;
+  background-color: #736c75;
+}

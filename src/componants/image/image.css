@@ -1,0 +1,10 @@
+.img-container {
+  padding: 5px;
+}
+.img {
+  width: 500px;
+}
+
+.img:hover {
+  transform: scale(1.05, 1.05);
+}

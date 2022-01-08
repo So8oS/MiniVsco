@@ -1,0 +1,21 @@
+.signin-container {
+  border: solid red;
+  width: 700px;
+  align-content: center;
+  margin: auto;
+}
+input {
+  width: 500px;
+}
+
+.details {
+  align-content: center;
+  height: 10em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+}

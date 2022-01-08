@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Navbar from "./componants/navbar/navbar";
+import Content from "./componants/content/content";
+import { Routes, Route } from "react-router-dom";
+import Signinpage from "./pages/signinpage";
+import { auth } from "./firebase/firebase.utils";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentuser: null,
+    };
+  }
+
+  unsubscribefromauth = null;
+  componentWillMount() {
+    this.unsubscribefromauth = auth.onAuthStateChanged((user) => {
+      console.log(user);
+      this.setState({ currentuser: user });
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribefromauth();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Content />} />
+          <Route path="/signin" element={<Signinpage />} />
+        </Routes>
+      </div>
+    );
+  }
 }
-
 export default App;
