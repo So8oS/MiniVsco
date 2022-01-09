@@ -2,25 +2,14 @@ import React, { Component } from 'react'
 import "./signinform.css"
 import { signInWithGoogle } from '../../firebase/firebase.utils';
 import CustomButton from '../Custom-button/CustomButton';
-import FormInput from '../form-input/FormInput';
-
-
 class Signinform extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
             password: ''
-
-
-
         }
-
-
     }
-
-
-
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -37,26 +26,27 @@ class Signinform extends Component {
         const { email, password } = this.state;
         return (
             <div className='sign-in'>
-                <h2>i have an account</h2>
-                <span>sign in with email and pass</span>
+                
 
-                <form onSubmit={this.handleSubmit}>
-                    <FormInput
+                <form onSubmit={this.handleSubmit}> 
+                <h1>email</h1>
+                    <input
                         name="email"
                         type='email'
                         value={email}
-                        handleChange={this.handleChange}
+                        onChange={this.handleChange}
                         label='email'
                         required
                     />
 
 
+<h1>password</h1>
 
-                    <FormInput
+                    <input
                         name="password"
                         type='password'
                         value={password}
-                        handleChange={this.handleChange}
+                        onChange={this.handleChange}
                         label='password'
                         required
                     />

@@ -4,6 +4,14 @@
   margin-left: 5px;
 }
 .nav-container {
-  height: 55px;
   background-color: #736c75;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.option {
+  padding: 10px 15px;
+  cursor: pointer;
 }
