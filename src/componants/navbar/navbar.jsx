@@ -5,11 +5,11 @@ import { auth } from '../../firebase/firebase.utils';
 
 
 
-const Navbar = ({ currentuser }) => (
+const Navbar = ({ currentUser }) => (
     <div className='nav-container'>
       <h1 className='title'>MiniVsco</h1>
 
-            {currentuser ? (
+            {currentUser ? (
                 <div className='option' onClick={() => auth.signOut()}>
                 SIGN OUT</div> ) 
                 : (<Link className='option' to='/signin'>SIGN IN</Link>)

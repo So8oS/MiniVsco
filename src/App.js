@@ -4,23 +4,37 @@ import Navbar from "./componants/navbar/navbar";
 import Content from "./componants/content/content";
 import { Routes, Route } from "react-router-dom";
 import Signinpage from "./pages/signinpage";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      currentuser: null,
+      currentUser: null,
     };
   }
 
   unsubscribefromauth = null;
 
-  componentWillMount() {
-    this.unsubscribefromauth = auth.onAuthStateChanged((user) => {
-      console.log(user);
-      this.setState({ currentuser: user });
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot((snapShot) => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
+          });
+
+          console.log(this.state);
+        });
+      }
+
+      this.setState({ currentUser: userAuth });
     });
   }
 
@@ -31,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar currentuser={this.state.currentuser} />
+        <Navbar currentUser={this.state.currentUser} />
         <Routes>
           <Route path="/" element={<Content />} />
           <Route path="/signin" element={<Signinpage />} />
