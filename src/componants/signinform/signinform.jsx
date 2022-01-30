@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./signinform.css"
 import { signInWithGoogle } from '../../firebase/firebase.utils';
 import CustomButton from '../Custom-button/CustomButton';
+import {Container, Button} from 'react-bootstrap';
 class Signinform extends Component {
     constructor(props) {
         super(props);
@@ -25,11 +26,13 @@ class Signinform extends Component {
     render() {
         const { email, password } = this.state;
         return (
-            <div className='sign-in'>
+
+            <Container fluid="md">
+            <div className='signin-container '>
                 
 
                 <form onSubmit={this.handleSubmit}> 
-                <h1>email</h1>
+                    <h3 >Email</h3>
                     <input
                         name="email"
                         type='email'
@@ -40,8 +43,8 @@ class Signinform extends Component {
                     />
 
 
-<h1>password</h1>
 
+                    <h3 >Password</h3>
                     <input
                         name="password"
                         type='password'
@@ -51,13 +54,19 @@ class Signinform extends Component {
                         required
                     />
 
-
+                            <br />
+                            <br />
                     <CustomButton type='submit'> Sign in </CustomButton>
                     <CustomButton onClick={signInWithGoogle}> Sign in with google</CustomButton>
+                    <div className='button'>    <button>sdsdsd</button>       </div>
+                    
                 </form>
             </div>
+            </Container>
         )
     }
 }
+
+
 
 export default Signinform;

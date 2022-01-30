@@ -3,6 +3,6 @@
   box-sizing: border-box;
 }
 
-.App {
-  background-color: #efd9ce;
+body {
+  background-color: #efd9ce !important;
 }

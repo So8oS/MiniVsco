@@ -1,8 +1,9 @@
 .img-container {
   padding: 5px;
+  overflow: hidden;
 }
 .img {
-  width: 500px;
+  width: 350px;
 }
 
 .img:hover {

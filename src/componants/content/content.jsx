@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './content.css'
 import Image from '../image/image';
+import { Container , Row, Col,} from 'react-bootstrap';
+
 class Content extends Component {
     constructor(){
     super();
@@ -17,10 +19,22 @@ class Content extends Component {
 
     render() {
         return (
-            <div className='container'>
-                {this.state.pics.map
-                (({id , download_url})=>(<Image className='img' key={id} url={download_url}/>))}
-                 </div>
+            <div className=''>
+                <Container fluid="md">
+                <Row>
+                        {this.state.pics.map
+                        (({id , download_url})=>(
+                           
+                            <Col sm={4}>  
+                        <Image className='img' key={id} url={download_url}/>
+                        </Col>
+                       
+                        ))}
+                            </Row>
+                </Container>
+               
+            
+            </div>
         )
     }
 }

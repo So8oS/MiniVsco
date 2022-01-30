@@ -5,7 +5,7 @@
 }
 .nav-container {
   background-color: #736c75;
-  height: 70px;
+  height: 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -14,4 +14,7 @@
 .option {
   padding: 10px 15px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }

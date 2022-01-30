@@ -3,6 +3,7 @@
   width: 700px;
   align-content: center;
   margin: auto;
+  text-align: center;
 }
 input {
   width: 500px;
@@ -17,5 +18,10 @@ input {
   justify-content: center;
 }
 
-.label {
+h3 {
+  font-size: 1rem;
+}
+
+.button {
+  text-align: center;
 }
