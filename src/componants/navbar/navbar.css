@@ -1,15 +1,17 @@
 .title {
-  font-family: "Josefin Sans", sans-serif;
-  font-family: "Pacifico", cursive;
-  margin-left: 5px;
+  font-family: "Oregano", cursive;
+  cursor: pointer;
+  color: white !important;
+  font-size: 48px !important;
+  line-height: 62px;
+  margin-left: 10px;
 }
 .nav-container {
-  background-color: #736c75;
-  height: 50px;
+  background-color: black;
+  height: 64px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
 }
 .option {
   padding: 10px 15px;
@@ -17,4 +19,9 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+
+.boot {
+  paddingleft: 0;
+  paddingright: 0;
 }

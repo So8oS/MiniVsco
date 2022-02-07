@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Navbar from "./componants/navbar/navbar";
+import NavBar from "./componants/navbar/navbar";
 import Content from "./componants/content/content";
 import { Routes, Route } from "react-router-dom";
 import Signinpage from "./pages/signinpage";
@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar currentUser={this.state.currentUser} />
+        <NavBar currentUser={this.state.currentUser} />
         <Routes>
           <Route path="/" element={<Content />} />
           <Route path="/signin" element={<Signinpage />} />
